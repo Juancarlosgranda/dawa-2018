@@ -1,24 +1,22 @@
 var http = require('http'),
     fs = require('fs'),
 parser = require('./parser_var.js'),
+parser2 = require('./parser_mill.js'),
     p= parser.parse_vars,
-    datos = parser.batman;
+    days= parser2.parse_mill;
 
 http.createServer(function (req,res){
-    fs.readFile('./form.html',function(err,html){
+    fs.readFile('./dias.html',function(err,html){
         var html_string = html.toString();
-        console.log(html_string);
         var respuesta = p(req),
             parametros = respuesta['parametros'],
             valores = respuesta['valores'];
+        var rep2 = days(valores),
+            dias = rep2['dias'];
         
-        for(var i=0; i<parametros.length; i++){
-            html_string = html_string.replace('{'+parametros[i]+'}',valores[i]);
-        }
-        html_string = html_string.replace('{identidad}',datos['identidad']);
-        html_string = html_string.replace('{poder}',datos['poder']);
+        html_string = html_string.replace('{dias}',dias);
         res.writeHead(200,{'Content-type':'text/html'});
         res.write(html_string);
         res.end();
     });
-}).listen(8080)
+}).listen(8080);

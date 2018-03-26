@@ -6,6 +6,7 @@ http.createServer(function(req,res){
     fs.readFile('./form.html',function(err,html){
         var html_string = html.toString();
         
+        
         if(req.url.indexOf('?')>0){
             var url_data = req.url.split('?');
             var arreglo_parametros = url_data[1].split('&');

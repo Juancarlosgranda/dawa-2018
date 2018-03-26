@@ -14,7 +14,6 @@ function parse_vars(req){
         parametros[i]= param_data[0];
         valores[i] = param_data[1];
         
-        
     }
     }
     return{
@@ -23,3 +22,7 @@ function parse_vars(req){
     };
 }
 module.exports.parse_vars = parse_vars;
+module.exports.batman = {
+    identidad: 'Bruce Wayne',
+    poder: 'Dinero'
+};

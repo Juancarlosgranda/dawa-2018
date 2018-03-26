@@ -1,0 +1,141 @@
+Laboratorio Nro2 - Granda Ramos
+------------------------------------------------------------
+2.3 
+La variable de arreglo_parametros es creado dentro de la condicional, si en caso no entrara en esta provocaría que esta no existiría. La solución que le podemos dar a esta es que el if abarque el primero for más, esto no debería darnos un error.
+////////////////////////////////////////////////////////////////
+2.5
+•	arreglo_parametros: nombre=batman
+•	parametros: nombre
+•	valores: batman
+////////////////////////////////////////////////////////////////
+2.6
+Lo que hicimos es devolver el form.html en toString de esta manera obtenemos Hola{nombre}!
+Y al momento de devolver el html_string le cambiamos la variable nombre del html por los valores de la url.
+////////////////////////////////////////////////////////////////
+3.4
+Aún no encuentro una manera de optimizarlo
+////////////////////////////////////////////////////////////////
+3.8
+Considero que la utilidad de las reutilizaciones de variables ayuda mucho al momento de ahorrar espacio en la ram, pues no se creara más variables que ocupen campo. 
+////////////////////////////////////////////////////////////////
+4.1
+function parse_horas(req){
+    
+    var f=new Date();
+    var horas = f.getHours();
+    var minutos = f.getMinutes();
+    var segundos = f.getSeconds();
+    
+    
+    var horas1= horas+":"+minutos+":"+segundos;
+    if(horas>12){
+    var horas2= (horas-12)+":"+minutos+":"+segundos;
+    }
+    else{
+    var horas2= horas+":"+minutos+":"+segundos;
+    }
+    return{
+        horas1: horas1,
+        horas2:horas2,
+        
+    };
+}
+module.exports.parse_horas = parse_horas;
+////////////////////////////////////////////////////////////////
+4.2
+function parse_mill(fecha){
+    var fechafinal= fecha;
+    
+    var fech1= new Date().getTime();
+    var fech2 = new Date(fecha).getTime();
+    var rep='';
+    if(fech1>fech2){
+        var rep = 'la fecha ingresada ya venció';
+    }else{
+        
+        var diff = (fech2 - fech1)/(1000*60*60*24);
+        var resultado = Math. round(diff*Math. pow(10,0))/Math. pow(10,0);
+        var rep = 'Faltan '+resultado+' días';
+    }
+
+    return{
+        dias: rep
+    };
+}
+module.exports.parse_mill = parse_mill;
+/////////////////////////////////////////////////////////////////
+4.3
+var http = require('http');
+var url = require('url');
+var fs = require('fs');
+var mime_types = {
+    'js': 'text/javascript',
+    'html': 'text/html',
+    'css': 'text/css',
+    'jpg': 'image/jpg',
+    'gif': 'image/gif',
+    'png': 'image/png'
+};
+http.createServer(function(solicitud, respuesta) {
+    var path_nombre = (url.parse(solicitud.url).pathname == '/') ? './form.html' : url.parse(solicitud.url).pathname;
+    var ruta_a_archivo = '.' + path_nombre;
+    fs.exists(ruta_a_archivo, function(existe) {
+        if (existe) {
+            fs.readFile(ruta_a_archivo, function(error, contenido_archivo) {
+                if (error) {
+                    respuesta.writeHead(500, 'text/plain');
+                    respuesta.end('Error interno.');
+                } else {
+                    var extension = ruta_a_archivo.split('.').pop();
+                    var mime_type = mime_types[extension];
+                    respuesta.writeHead(200, {'Content-Type': mime_type});
+                    respuesta.end(contenido_archivo);
+                }
+            });
+        } else {
+            respuesta.end('¡El enlace no existe!');
+        }
+    });
+}).listen(8080);
+/////////////////////////////////////////////////////////////////
+5.7
+function navidad(){var fech1= new Date().getTime();fech2= new Date('2018-12-25').getTime(); var dife=(fech2 - fech1)/(1000*60*60*24);var resultado=Math. round(diff*Math. pow(10,0))/Math. pow(10,0);return 'faltan '+resultado+ ' dias para navidad';}
+/////////////////////////////////////////////////////////////////
+
+				TAREA:
+1. Use un modulopara los dos ejercicios para tratar peticiones en metodo post. el sengundo modulo que al mandarle dos numeros en metodo post y un tipo de operacion me retorna un resultado:
+Archivos que comprenden esta actividad son:
+	-parse_operaciones.js
+	-operaciones.js
+	-operando.html
+	.parser_valores.js
+/////////////////////////////////////////////////////////////////
+2. Para este ejercicio hice uso de dos modulos. Uno que se encarga(parse_valores.js) de devolverme los datos de formulario que esta en metodo post
+Archivos usados:
+	-cadenas.js
+	-parser_cadenas.js
+	-formtext.html
+	.parser_valores.js
+/////////////////////////////////////////////////////////////////
+3.Se instalo correctamente npm como se puede ver en la imagen con el nombre "install-npm"
+
+para el ejemplo cree un archo prueba .js donde  existe una etiqueta de "debugger" que asigna un punto de interrupción al programa. 
+Este comando abrirá un navegador y conectará con el servidor que se acaba de arrancar permitiendo al desarrollador acceder a una herramienta de debugging remoto completa.
+///////////////////////////////////////////////////////////////////////////////
+Conclusiones:
+1. Los modulos nos permiten optimizar el código ya que reutilizamos funciones que se deben utilizar mas de una vez, de esta manera nos ahorran tiempo.
+2. Para realizar el enrutador hice uso de la url para saber a donde quiere acceder el usuario, para ello se la variable pathname, esta variable preguntará si la url es ‘/’ lo que significa que el visitante está en la página principal, en este caso forzaremos a que path_nombre sea ‘/form.html’, que es el archivo principal de lo contrario guardará el pathname así como lo encuentra.
+3.Incluimos el módulo http, el cual nos permitirá procesar y responder mensajes de un servidor web y a su vez esa variable http es un objeto que tiene un evento .createServer() que recibirá como parámetro una función que se disparará cada vez que haya una petición nueva en nuestro sitio.
+4. Importamos los modulos, primero el archivo y despues con el nombre q se envio y de esta forma hacer uso de la funcion decretada en ella.
+5. Para hacer la tarea use formularios y los envie como metodo post, donde analice el tipo de entrada, luego mediante un modulo devolvi una respuesta.
+
+
+
+
+
+
+
+
+
+
+
