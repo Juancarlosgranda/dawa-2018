@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>  
+<div class="wrap">
+
+    <button>Primer botón</button><br><br>
+    <button>Segundo botón</button><br><br>
+    <button>Tercer botón</button><br><br>
+    <button>Cuarto botón</button><br><br>
+    <button>Quinto botón</button><br><br>
+
+</div>
+
+
+<script>
+
+   /* (function init() {
+
+        var nodes = document.getElementsByTagName('button');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].addEventListener('click', function () {
+                console.log('you clicked element #' + i)
+            })
+
+        }
+    })();*/
+    (function init() {
+            var btn = document.getElementsByTagName('button');
+
+            for (var i = 0; i < btn.length; i++) {
+                btn[i].addEventListener('click', function (n) {
+                    return function () {
+                        alert('you clicked ' + n)
+                    }
+                })(i);
+            }
+        })();
+
+</script>
+</body>
+</html>

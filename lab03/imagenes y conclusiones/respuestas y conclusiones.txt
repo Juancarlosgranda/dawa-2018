@@ -1,0 +1,350 @@
+LABORATORIO 03----------------------
+AUTOR: GRANDA RAMOS JUAN CARLOS
+RESPUESTAS://///////////////////////////////////////////////////////////////////////
+4.12)------------------------------------------------------------------------------
+Es muy parecido a una select anidados.
+En la primera función hace una consulta a todos los empleado q posee la designación
+ de “SSE” y a partir del resultado la otra función se encargará de imprimir solo los
+nombres y los id de cada usuario.
+5.5)----------------------------------------------------------------------
+Seria mas funcional si mediante consola le mandariamos el tipo de idioma que se quiere traducir ademas del texto q quieras traducir
+IMAGEN: "5.5-replace.png"
+6.8)--------------------------------------------------------------------------------
+En mi caso obtuve un warn pero el erro es que primero deberíamos haber iniciado npm init
+6.9)--------------------------------------------------------------------------------
+//Importando nuestra propia libreria
+var _ = require('grandaramos-tecsup')
+
+var objetivo = '%hello% %world%! -- %world% %hello%!'
+var idioma = 'en'
+var reemplazos = {
+  'en': {
+    'hello': 'Hello',
+    'world': 'World'
+  },
+  'es': {
+    'hello': 'Hola',
+    'world': 'Mundo'
+  }
+}
+var resultado = _.replace(objetivo, reemplazos[idioma])
+console.log(resultado)
+//Fin del codigo
+IMAGEN:"6.9_codigoyresultado.png"
+7.1)---------------------------------------------------------------------------------
+Guarda en la variable nodes una arreglo de todos las etiquetas tipo button.
+Luego mediante un for recorre este arreglo, y analiza si tuvo un evento, si este fuera el caso imprimirá You clicked element # (aquí va la cantidad de “button que existe en la plantilla”)
+7.2)---------------------------------------------------------------------------------
+//Código
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>  
+<div class="wrap">
+
+    <button>Primer botón</button><br><br>
+    <button>Segundo botón</button><br><br>
+    <button>Tercer botón</button><br><br>
+    <button>Cuarto botón</button><br><br>
+    <button>Quinto botón</button><br><br>
+
+</div>
+
+<script>
+
+    (function init() {
+
+        var nodes = document.getElementsByTagName('button');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].addEventListener('click', function () {
+                console.log('you clicked element #' + i)
+            })
+
+        }
+    })();
+
+</script>
+</body>
+</html>
+//Fin del codigo
+IMAGEN DEL RESULTADO: "7.1.PNG"
+7.3)--------------------------------------------------------------------------------------
+Este código solo imprime números, la función setTimeout recibe dos valores y creo que el primer parámetro es lo primero q se imprimirá y el segundo es el tiempo que se demorará en hacerlo.
+//Código
+function printing () {
+  console.log(1)
+  setTimeout(function() {
+    console.log(2)
+  }, 4000)
+  setTimeout(() => {
+    console.log(3)
+  }, 3000)
+  console.log(4)
+}
+printing();
+//find del codigo
+IMAGEN: "setTimeout.PNG"
+7.5)-------------------------------------------------------------------------------------
+Lo utilizaría cuando quiera validar una variable booleana, si bien optimiza el código también puede ser un tanto limitada a la hora de querer desarrollar condicionales que requieran una lógica mas compleja.
+7.10)------------------------------------------------------------------------------------
+Me parece muy interesante como es la herencia en javascript. El concepto de herencia se mantiene tal como en todos los lenguajes y en este se declara en funciones especificas retornable en un arreglo. la encapsulación de las variables se hace mediante la declaracion en arreglos y dentro de estos funciones retornables con dichos valores. 
+
+IMAGEN: "herencia.png"
+8.2)---------------------------------------------------------------------------------------
+Codigo:
+;(function () {
+  var mayor = function (o1, o2) {
+    if (o1.tamano > o2.tamano) {
+        console.log(o1.tamano+' es mayor')
+    }else if (o1.tamano == o2.tamano) {
+        console.log(o1.tamano + ' es igual a '+ o2.tamano)
+    }else {
+        console.log(o2.tamano+' es mayor')
+    }
+  }
+  var x = {
+    tamano: 45
+  }
+  var y = {
+    tamano: 120
+  }
+
+  mayor(x, y)
+}())
+
+IMAGEN: "NumeroMayor.PNG"
+8.3)------------------------------------------------------------------------------------------
+//código
+;(function () {
+  var album_favorito = function (coleccion) {
+    var contador = 0
+    for (var i in coleccion) {
+      contador++;
+    }
+    if (contador === 0) {
+      return
+    }
+    var mas_reproducido = coleccion[0].tocado,
+      mas_indice = 0
+    for (var i = 1; i < contador; i++) {
+      if (coleccion[i].tocado > mas_reproducido) {
+        mas_reproducido = coleccion[i].tocado
+        console.log(mas_reproducido)
+        mas_indice = i
+      }
+    }
+    return {play: mas_reproducido, index: mas_indice}
+  }
+  var music = {
+    0: {
+      nombre: 'Buenas noches mi país',
+      genero: 'balada',
+      artista: 'NOX',
+      tocado: 22
+    },
+    1: {
+      nombre: 'Todo se termino',
+      genero: 'balada',
+      artista: 'NOX',
+      tocado: 15
+    },
+    2: {
+      nombre: 'Solo quiere verte sonreir',
+      genero: 'balada',
+      artista: 'NOX',
+      tocado: 85
+    },
+    3: {
+      nombre: 'Unilateral',
+      genero: 'balada',
+      artista: 'NOX',
+      tocado: 45
+    },
+    4: {
+      nombre: 'Mine',
+      genero: 'balada',
+      artista: 'Bazzi',
+      tocado: 70
+    },
+    5: {
+      nombre: 'Beautiful',
+      genero: 'balada',
+      artista: 'bazzi',
+      tocado: 63
+    }
+  }
+  var fav = album_favorito(music)
+
+  console.log('Tu album favorito: '+ music[fav.index].nombre +' fue tocado ' + fav.play + ' veces')
+}())
+//Fin del código
+IMAGEN: "albumFavorito.png"
+8.4)-----------------------------------------------------------------------------------------------------
+//Código:
+;(function () {
+  function Sumar () {
+    var numbers = []
+    return {
+      agregar: function (a) {
+        numbers.push(a)
+      },
+      obtenerSumaActual: function () {
+        if (numbers.length === 0) {
+          return 0
+        }else {
+          var resul = 0
+          for (let i = 0; i < numbers.length; i++) {
+            resul += numbers[i]
+          }
+          return resul
+        }
+      }
+    }
+  }
+  var s1 = Sumar()
+  var s2 = Sumar()
+
+  s1.agregar(10)
+  s1.agregar(20)
+
+  s2.agregar(30)
+  s2.agregar(5)
+  // imprime 30
+  console.log(s1.obtenerSumaActual())
+  // imprime 35
+  console.log(s2.obtenerSumaActual())
+}())
+//Fin del código
+IMAGEN: "sumasVariables.png"
+8.5)---------------------------------------------------------------------------------------
+//Código:
+;(function () {
+  function MusicaBox () {
+    var musica = []
+    var favorito = ''
+    return {
+      addAlbum: function (cancion) {
+        musica.push(cancion)
+      },
+      favoriteAlbum: function () {
+        if (musica.length === 0) {
+          return null
+        }
+        var temp = musica[0]
+        for (var i = 1; i < musica.length; i++) {
+          if (musica[i].reprodcciones() > temp.reprodcciones()) {
+            temp = musica[i]
+          }
+        }
+        return temp.cancion()
+      },
+      arrayas: function () {
+        return musica
+      }
+    }
+  }
+  var Album = function (a , b) {
+    var reprod = 0
+    return {
+      cancion: function () {
+        return a + ' - ' + b
+      },
+      play: function () {
+        console.log('Se esta reproduciendo ' + this.cancion())
+        reprod++
+      },
+      reprodcciones: function () {
+        return reprod
+      }
+
+    }
+  }
+
+  var box = MusicaBox(),
+    a1 = Album('The who', 'Tommy'),
+    a2 = Album('Tom Waits', 'Closing Time'),
+    a3 = Album('Jhon Cale', 'Paris 1919'),
+    favorito
+
+  box.addAlbum(a1)
+  box.addAlbum(a2)
+  box.addAlbum(a3)
+
+  a1.play() // imprime "Tocando The who - tomy"
+  a2.play() // imprime "Tocando Tom Waits - Closing Time"
+  a1.play() // imprime "Tocando The who - tomy"
+  a3.play()
+  a3.play()
+  a3.play()
+
+  favorito = box.favoriteAlbum()
+  // Imprime tu album favorito es the who - Tommy
+  console.log('///////////////////////////////////////////')
+  console.log('Tu album favorito es ' + favorito)
+}())
+//Fin del código
+IMAGEN: "albumasTocado.png"
+8.6)-----------------------------------------------------------------------------------------------------
+//Código
+;(function () {
+  function NumberPrimo (n1) {
+    var analizar = typeof (n1)
+    if (analizar == 'number') {
+      var c = 0
+      for (let i = 2; i < n1; i++) {
+        if (n1 % i == 0)
+          return 'El numero ' + n1 + ' no es primo'
+      }
+      return ' el numero ' + n1 + ' es primo'
+    }else if (analizar == 'string') {
+      return 'Error!!! Insertaste una cadena de texto'
+    }else {
+      return 'Error!!! Insertaste un booleano'
+    }
+  }
+  console.log(NumberPrimo(3))
+}())
+//Fin del código:
+IMAGEN: "primos.png"
+8.7)---------------------------------------------------------------------------------------------------------
+QUICK SORT
+//Código
+;(function () { function quicksort (A, izq, der) {
+    var pivote = A[izq],i = izq,j = der,temp
+    while (i < j) { 
+      while (A[i] <= pivote && i < j) i++
+      while (A[j] > pivote) j-- 
+      if (i < j) {                       
+        temp = A[i]
+        A[i] = A[j]
+        A[j] = temp; }
+    }
+    A[izq] = A[j] 
+    A[j] = pivote
+        if (izq < j - 1)
+      quicksort(A, izq, j - 1) 
+    if (j + 1 < der)
+      quicksort(A, j + 1, der) 
+      return A;
+  }
+  var A = [200, 15, 6, 14, 26, 7, 9, 12, 47], izq = 0, der = A.length - 1
+  console.log(quicksort(A, izq, der))
+}())
+//FIN DEL CÓDIGO 
+IMAGEN: "quicksort.png"
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                        CONCLUSIONES DEL LABORATORIO:
+1.EN ESTE LABORATORIO DESARROLLAMOS ALGORITMOS, UTILIZANDO NUESTRA LÓGICA Y OPTIMIZANDO LO MAS POSIBLE EL CÓDIGO A DEMÁS PUDIMOS VER ALGUNOS ASPECTOS IMPORTANTES DE LA PROGRAMACION ORIENTADA A OBJETOS EN JAVASCRIPT.
+2.LA HERENCIA ES UN PILAR MUY IMPORTANTE DE LA PROGRAMACION ORIENTADA A OBJETOS, PERO NO TODO LOS LENGUAJES TIENEN LA MISMA PERSPECTIVA DE COMO SE RELACIONAN LOS OBJETOS. SI LA HERENCIA NO ES CORRECTAMENTE APLICADA, SERA MUY DIFICL DE MODIFICAR O ESCALAR EL SOFTWARE Y EN JAVASCRIPT HAY TRES MANERAS DE IMPLEMENTAR LA HERENCIA
+3.HERENCIA POR CONCATENACIÓN CONSISTE EN COPIAR PROPIEDADES DE UNO O VARIOS OBJETOS, EN UN NUEVO OBJETO DESTINO, A ESTO TAMBIÉN SE LE CONOCE COMO MIXINS, Y DESDE ES2015, SE CUENTA CON UNA MANERA SENCILLA DE HACERLO CON OBJECT.ASSIGN()
+4.HERENCIA POR DELEGACIÓN CONSISTE EN SI SE CONSULTA UNA PROPIEDAD EN UN OBJETO Y NO SE ENCUENTRA, SE CONTINÚA BUSCANDO EN EL OBJETO AL CUAL ESTÉ VINCULADO POR [[PROTOTYPE]], HASTA LLEGAR A OBJECT.PROTOTYPE, PARA CONTROLAR Y DETERMINAR ESTE VINCULO ENTRE OBJETOS CONTAMOS CON OBJECT.CREATE()
+5.HERENCIA FUNCIONAL, LA QUE MAS USAMOS EN EL DESARROLLO DEL LABORATORIO, CONSISTE EN QUE TODA FUNCIÓN PUEDE RETORNAR OBJETOS APROVECHÁNDOSE DE LOS CLOSURES PARA TENER PROPIEDADES PRIVADAS, A ESTO SE LE LLAMA FACTORY FUNCTIONS, SE PUEDEN EXTENDER ESTOS OBJETOS RETORNADOS DIRECTAMENTE.
+6.EN ESTE LABORATORIO NOS TOPAMOS DESAFIOS PARA DESARROLLAR ALGORITMOS USANDO NUESTRA LOGICA, CABE RESALTAR QUE LA LOGICA DE PROGRAMACION ES MUY IMPORTANTE EN LA VIDA DE LAS PERSONAS Y NO SOLO DE LA DE LOS DESARROLLADORES, PUES NOS AYUDA A BUSCAR UNA SOLUCION CON PROCEDIMIENTOS DEFINIDOS EN LOS PROBLEMAS DIARIOS DE LA VIDA
+
+
