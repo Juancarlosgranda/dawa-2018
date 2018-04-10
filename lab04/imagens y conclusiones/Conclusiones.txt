@@ -1,0 +1,38 @@
+LABORATORIO N° 04
+Sitio Web con Express
+Autor: Granda Ramos Juan Carlos
+//////////////////////////////////////////////////////////////////////////////////
+RESPUESTAS:
+--------------------------------------------------------------------------------------------------
+2.13)Explica los cambios que se buscan al utilizar middlewares para capturar la misma URL pero con diferente método HTTP.
+
+Considero que es para realizar diferentes acciones, ya que los middlewares son bloques de código. Esto nos permitiria redirigir a otras funciones segun la petición del usuario.
+--------------------------------------------------------------------------------------------------
+2.15) Instalación de httpRequester
+En mi caso instale postman para hacer pruebas.
+--------------------------------------------------------------------------------------------------
+2.24)Capturas
+    > static.png
+    > static2.png
+    > postman.png
+    > prueba.png
+--------------------------------------------------------------------------------------------------
+2.26) Probando error 204
+    > error_404.png
+--------------------------------------------------------------------------------------------------
+3) Para el desarrollo un archivo css master y depues cree el index.html
+   Es una sencilla landing page
+   IMÁGENES
+   >  landingpage-1.png
+   >  landingpage-2.png
+   >  landingpage-3.png
+   >  landingpage-4.png
+   >  landingpage-5.png
+/////////////////////////////////////////////////////////////////////////////////
+CONCLUSIONES.
+1.	Express es un framework que está escrito en JavaScript y alojado dentro del entorno de ejecución NodeJS, por lo que averigüe también tiene un motor de vistas el cual es necesario instalar si se comienza sin la creación de proyecto a través de express, me parece muy parecido a cómo funcionaba Laravel.
+2.	En el desarrollo de landing page me tope con el problema de no poder acceder a archivos como css, img, etc. En express existe el servicio de archivos estáticos como los descritos anteriormente, solo debemos utilizar la función de middleware incorporado express.static de Express.
+3.	Pasamos el nombre del directorio que contiene los activos estáticos a la función de middleware express.static para empezar directamente el servicio de los archivos en nuestro caso usamos el directorio public.
+4.	Express busca los archivos en el orden en el que se definen los directorios estáticos con la función de middleware express.static.
+5.	Una vez instalado express podemos utilizar express NOMBRE-DEL-APP lo cual te creara una estructura personalizada y los archivos necesarios para comenzar a trabajar con el mismo. Haz cd NOMBRE-DEL-APP && npm install para instalar automáticamente las dependencias, la estructura generada seria como la que creamos en laboratorio “miApp”
+6.	Una landing page es una excelente herramienta como  estrategia de marketing ya que te ayudará a convencer al usuario de utilizar nuestro servicio.

@@ -1,8 +1,10 @@
 var express = require('express')
 var app = express()
+var path = require('path')
 app.use(express.static('public'))
 app.get('/', function (req, res) {
-  res.send('Hola mundo! en express :)')
+  res.sendFile(path.join(__dirname + '/index.html'))
+// __dirname : It will resolve to your project folder.
 })
 app.post('/', function (req, res) {
   res.send('Llamada POST misma url')
