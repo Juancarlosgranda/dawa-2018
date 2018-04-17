@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h2.form-signin-heading Categorías
+    br
+    form.form-signin(action="/categoria/edit",method = "post")
+                    input(type="hidden" name="id" value="#{data._id}") 
+                    input.input-block-level(type="text", name="nombre", placeholder="Nombre de la categoría" value=" #{data.nombre}")
+                    br
+                    br
+                    button.btn.btn-large.btn-success(type="submit") Editar
+
+    a.btn.btn-large.btn-primary(href="/categoria") Volver 

@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    h2.form-signin-heading Categorías
+    h5  
+        a(href="/") Home 
+    br
+    br
+    table.table
+                    thead
+                        tr
+                            th ID
+                            th Nombre
+                            th Acciones
+                    tbody
+                        for item in data
+                            tr
+                                td= item._id
+                                td= item.nombre
+                                td 
+                                    a(href="/categoria/edit/#{item._id}").btn.btn-large.btn-success Editar
+                                    a(href="/categoria/delete/#{item._id}").btn.btn-large.btn-danger Eliminar
+    br
+    h4.form-signin-heading Crear categorías
+    br
+    form.form-signin(method = "post",action="/categoria/create")
+                div.form-group
+                    label(for='nombre') Nombre:
+                    input#nombre.form-control(type="text" name="nombre",placeholder="Nombre de la categoría")
+                button.btn.btn-large.btn-success(type="submit") Crear

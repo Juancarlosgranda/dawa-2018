@@ -14,14 +14,14 @@ module.exports = {
     if (req.query._id == null) {
       prod_model.find({}, function (err, items) {
         if (!err) {
-         // res.send(items)
-          res.render('table',{data: items})
+          // res.send(items)
+          res.render('table', {data: items})
         }else {
           return console.log(err)
         }
       })
     }else {
-      prod_model.findOne({_id:req.query._id}, function (err, items) {
+      prod_model.findOne({_id: req.query._id}, function (err, items) {
         if (!err) {
           res.send(items)
         }else {
@@ -31,27 +31,30 @@ module.exports = {
     }
   },
   create: function (req, res) {
-      var item = {
-          nombre: req.query.nombre,
-          descripcion: req.query.descripcion,
-          precio: req.query.precio
+    console.log('entrando al post producto')
+    console.log(req.body)
+    var nuevo = new prod_model(req.body).save((err, store) => {
+      if (err) {
+        res.status(500).send('Algo salio mal!!!')
+      }else{
+        res.send("Producto creado correctamente")
       }
-      var nuevo = new prod_model(item).save()
-      res.send(nuevo)
+    })
+   
   },
   update: function (req, res) {
-      prod_model.findOne({_id: req.query._id}, function (err, producto){
-        producto.nombre = req.query.ombre;
-        producto.descripcion = req.query.descripcion;
-        producto.precio = req.query.precio;
-        producto.save()
-        res.send(producto)
-      })
+    prod_model.findOne({_id: req.query._id}, function (err, producto) {
+      producto.nombre = req.query.nombre
+      producto.descripcion = req.query.descripcion
+      producto.precio = req.query.precio
+      producto.save()
+      res.send(producto)
+    })
   },
   delete: function (req, res) {
-      prod_model.findOne({_id:req.query._id},function (err,producto) {
-          producto.remove()
-          res.send({status:true})
-      })
+    prod_model.findOne({_id: req.query._id}, function (err, producto) {
+      producto.remove()
+      res.send({status: true})
+    })
   }
 }

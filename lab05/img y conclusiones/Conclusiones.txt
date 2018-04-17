@@ -1,0 +1,63 @@
+LABORATORIO 05
+AUTOR: GRANDA RAMOS JUAN CARLOS
+////////////////////////////////////////////////////////////////////////////////////////////
+RESPUESTAS Y OBSERVACIONES DEL LABORATORIO
+--------------------------------------------------------------------------------------------
+1.8)La instalación de mongo ya fue realizada en el ciclo pasado, es por ello que salte esos pasos.
+--------------------------------------------------------------------------------------------
+2.5)La creacion de la collecion productos con un documento fue exitosa:
+        IMG: 1-mongodb.png
+--------------------------------------------------------------------------------------------
+3.2)Instalación de mongoose exitosa:
+        IMG: instalaciondependecias.png
+--------------------------------------------------------------------------------------------
+3.5)    Show pertenece a la búsqueda de uno o varios documento
+        Create a la ceración de un documento
+        Update a la actualización de un producto
+        Delete a la eliminación de un producto.
+--------------------------------------------------------------------------------------------
+3.9)Adjuntando la captura:
+        IMG:3.showfind().png
+--------------------------------------------------------------------------------------------
+3.10)No puedo probar los formularios debido a que postman no mandan los datos requeridos.
+--------------------------------------------------------------------------------------------
+3.15)Lista de productos con vista
+        IMG:table-jade.png
+--------------------------------------------------------------------------------------------
+3.18)Captura localhost:9090/producto
+        IMG:5-table-show.png
+--------------------------------------------------------------------------------------------
+3.19)Codigo e imagen del login:
+        IMG:5-code-login.png
+        IMG2: login1.png / login2.png / login3.png / login4.png / login5.png / login6.png
+--------------------------------------------------------------------------------------------
+3.20)Create de productos:
+        IMG: 7-create-product.png
+        IMG: create-product1.png | create-product2.png
+--------------------------------------------------------------------------------------------
+TAREA: Implemente el crud de las siguientes tablas:
+        -Tipos de usuarios
+        -Categorías
+        -usuarios
+        IMG:tarea-inicio.png
+Imágenes del crud de categorias:
+    -crud-categorias-create.png
+    -crud-categorias-edit.png
+    -crud-categorias-show.png
+Imágenes del crud de tipos de usuarios:
+    -crud-tipos1.png
+    -crud-tipos-create.png
+    -crud-tipos-editar.png
+Imágenes del crud de usuarios:
+    -crud-usuarios-create.png
+    -crud-usuarios-edit.png
+    -crud-usuarios-edit-show.png
+    -crud-usuarios-show
+--------------------------------------------------------------------------------------------
+Conclusiones:
+1.	La operación de read es realizada por los navegadores cada vez que visita una página web. Debajo del capó, los navegadores envían una solicitud GET al servidor para realizar una operación de read. 
+2.	La operación create solo la realiza el navegador si se envía una solicitud POST al servidor. Esta solicitud POST puede activarse con JavaScript o mediante un <form> elemento.
+3.	Mongoose es una herramienta de modelado de objetos MongoDB diseñada para trabajar en un entorno asíncrono. Lo utilizamos para poder hacer conectarnos a la base de datos y hacer consultas.
+4.	Body-parser es un middleware de análisis del cuerpo de Node.js. analiza los cuerpos de solicitud entrantes en un middleware antes que sus manejadores, disponible debajo de la req.body propiedad.
+5.	Fue necesario agregar el app.use(bodyParser.urlencoded({extended: false})) ya que no podía leer los parámetros enviados vía post, además cambie el uso de query por params que leen de una manera distinta las variables enviadas por la url.
+

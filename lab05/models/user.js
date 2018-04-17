@@ -1,10 +1,23 @@
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema
+
+mongoose.connect('mongodb://localhost/test')
+
+var user_schema = new Schema({
+  email: String,
+  pass: String
+})
+user_model = mongoose.model('user', user_schema, 'user')
 module.exports = {
   login: function (req, res) {
-    if ((req.query.username == 'tecsup') && (req.query.password == 'tecsup')) {
-      res.send('Bienvenido')
-    }else {
-      res.send('email o contrasenia incorrectas')
-    }
+    console.log(req.body)
+    user_model.findOne({email: req.body.username, pass: req.body.password}, function (err, items) {
+      if (!err && items != null) {
+        res.send(items)
+      } else {
+        res.send("Contraseña o email incorrecta")
+      }
+    })
   }
 
 }

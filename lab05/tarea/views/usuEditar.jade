@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    h2.form-signin-heading Editar tipos de usuario
+    h5  
+        a(href="/") Home 
+    br
+    form.form-signin(action="/usuarios/edit",method = "post")
+                    input(type="hidden" name="id" value="#{data._id}") 
+                    div.form-group
+                        label(for='nombre') Nombre:
+                        input#nombre.form-control(type="text" name="nombres",placeholder="Nombre completo" value=" #{data.nombres}")
+                    div.form-group
+                        label(for='correo') Correo electrónico:
+                        input#correo.form-control(type="text" name="correo",placeholder="E-mail" value=" #{data.correo}")
+                    div.form-group
+                        label(for='user') Usuario:
+                        input#user.form-control(type="text" name="user",placeholder="Alías" value=" #{data.user}")
+                    div.form-group
+                        label(for='pass') Contraseña:
+                        input#pass.form-control(type="text" name="password",placeholder="Nombre del tipo de usuario" value=" #{data.password}")
+                    div.form-group
+                        label(for='nombre') Tipo de usuario:
+                    div.form-group
+                        select.form-control.selcls(name="tipo")
+                                option(value="Admin") Administrador
+                                option(value="User") Usuario Premiun
+                        br
+                    br
+                    button.btn.btn-large.btn-success(type="submit") Editar

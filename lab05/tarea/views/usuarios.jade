@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h2.form-signin-heading Usuarios
+    h5  
+        a(href="/") Home 
+    br
+    br
+    table.table
+                    thead
+                        tr
+                            th ID
+                            th Nombres
+                            th Email
+                            th Usuario
+                            th Acciones
+                    tbody
+                        for item in data
+                            tr
+                                td= item._id
+                                td= item.nombres
+                                td= item.correo
+                                td= item.user
+                                td 
+                                    a(href="/usuarios/edit/#{item._id}").btn.btn-large.btn-success Editar
+                                    a(href="/usuarios/delete/#{item._id}").btn.btn-large.btn-danger Eliminar
+    
+    a(href="/usuarios/create").btn.btn-large.btn-primary Crear nuevo usuario
+    
