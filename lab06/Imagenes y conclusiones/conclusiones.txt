@@ -18,3 +18,59 @@ ________________________________________________________________________________
 2.14)Captura de lo obtenido:
         IMG: Lab06-5 | Lab06-6
 ----------------------------------------------------------------------------------------------------------------
+3.5) Cada vez que refresco una pagina repite la lista de usuarios.
+        Captura de lo obtenido:
+        IMG: Lab06-7
+----------------------------------------------------------------------------------------------------------------
+3.7) Ya no sucede lo mismo, al refrescar la página solo manda los datos al lugar donde se refresco.
+        Captura de lo obtenido:
+        IMG: Lab06-8
+----------------------------------------------------------------------------------------------------------------
+4.6) Se logro editar pero no me aparecio la fila de color warning.
+        Captura de lo obtenido:
+        IMG: Lab06-9
+             Lab06-10
+----------------------------------------------------------------------------------------------------------------
+5.5)Eliminación de documentos:
+        > Creacion de una prueba:
+        IMG: Lab06-10
+        > Eliminación y comprobación
+        IMG: Lab06-11 | Lab06-12 | Lab06-13
+----------------------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+TAREA
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1. Alerta de la actualización:
+        > Código agregado
+                IMG: Tarea-1-code1 | Tarea-1-code2
+        > Visualización:
+                IMG: Tarea-1
+----------------------------------------------------------------------------------------------------------------
+2. Parpadeo de la fila esdita o creada:
+        > Código agregado
+                IMG: Tarea-2-code1 | Tarea-2-code2
+        > Visualización:
+                IMG: Tarea-2
+----------------------------------------------------------------------------------------------------------------
+3. Agregando un campo de true or false a la colección users
+        > Creando el comobobox en main.jade
+                IMG:Tarea-3-code1
+        >Modificando el código del modelo user.js
+                IMG: Tarea-3-code2
+        > Modificando el app.js         
+                IMG: Tarea-3-code3
+        > Visualización:
+                IMG: Lab06-14 | Lab06-15
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CONCLUSIONES:
+
+1. Socket.io es una librería que nos permite manejar eventos en tiempo real mediante una conexión TCP y todo ello en JavaScript. 
+
+2. Socket.io está desarrollado completamente en Javascript y, su objetivo es hacer que las aplicaciones en tiempo real tengan posibilidad de ejecutarse en cualquier navegador, incluidos los dispositivos móviles, salvando las diferencias entre los diferentes protocolos.
+
+3. Es realmente potente y podemos hacer todo tipo de aplicaciones en tiempo real. Hay muchos ejemplos de chat, que es el ejemplo que el profesor nos explicó en el salón y pudimos notar su utilidad y simpatía para programar con esta librería.
+
+4. Existe una gran diferencia al utilizar “io” y utilizar “socket”, pues al usar el “io” notaremos que lo que se emita se reflejara en todos los puntos de conexión. En cambio, al usar socket hacemos que lo que se emita solo sea en la maquina donde se esta ejecutando el servicio web.
+
+5. Este laboratorio nos será de gran ayuda para desarrollar nuestro proyecto que posee un chat integrado. De esta manera los usuarios podrán quedar las ventas del reciclaje y los costos de estos.
+       

@@ -21,6 +21,12 @@ block content
             .form-group    
                 label(for="profile_pic") Foto
                 input#profile_pic.form-control(type="text",placeholder="URL de foto")
+            .form-group
+                label(for="estudia") Estudia:
+                select#estudia.form-control.selcls
+                        option(value="true") SI
+                        option(value="false") NO
+                br
             button.btn.btn-default(type="submit") Guardar
         br
         .col-xs-8
@@ -33,6 +39,8 @@ block content
                         th Zona Horario
                         Th Idioma
                         th Foto
+                        th Estudia
                         th Acciones
+                        th Acciones                        
                     tbody
 
