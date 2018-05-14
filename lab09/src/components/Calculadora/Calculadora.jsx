@@ -11,12 +11,13 @@ export default class Contador extends Component {
         })
     }
     aumentarHandler = () => {
-        var input = this.refs.myInput;
-        var inputValue = input.value;
-        this.setState({
-            cont: this.state.cont + inputValue
+        alert('this is:', this);
+        // var input = this.refs.myInput;
+        // var inputValue = input.value;
+        // this.setState({
+        //     cont: this.state.cont + inputValue
             
-        })
+        // })
     }
     resetHandler = () => {
         this.setState({
@@ -34,7 +35,7 @@ export default class Contador extends Component {
                 <p>Haz algun calculo para ver el resultado.</p>
                 <input type="textfield" name="ans" value={this.state.cont}/>
                 <br/>
-                <input type="button" value="1" ref="myInput" onClick={this.aumentarHandler}/>
+                <input type="button" value="1" ref="myInput" onClick={(e) =>this.aumentarHandler("1",e)}/>
                 <input type="button" value="2" ref="myInput" onClick={this.aumentarHandler}/>
                 <input type="button" value="3" ref="myInput" onClick={this.aumentarHandler}/>
                 <input type="button" value="+" onClick="document.calculator.ans.value+='+'"/>
