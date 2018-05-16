@@ -1,0 +1,36 @@
+Laboratorio 09
+Autor: Granda Ramos Juan Carlos
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Desarrollo de laboratorio:
+___________________________________________________________________________________________
+2.3) Captura 2.3.PNG
+___________________________________________________________________________________________
+3.2) Captura 3.2.PNG
+___________________________________________________________________________________________
+3.6) Captura 3.6.PNG
+___________________________________________________________________________________________
+4.2) Captura 4.2.PNG
+___________________________________________________________________________________________
+4.10) Captura 4.10.PNG
+___________________________________________________________________________________________
+5.6) Captura 5.6.PNG
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+TAREA: DESARROLLO DE LA CALCULADORA:
+------------------------------------------------------------
+1. CÓDIGO:
+    IMG:CODE1.PNG
+    IMG:CODE2.PNG
+    IMG:CODE3.PNG
+2. PROBANDO:
+    IMG:calculadora1.PNG
+    IMG:calculadora2.PNG
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CONCLUSIONES:
+1. Los eventos React se nombran usando camelCase, en lugar de minúsculas.Con JSX pasas una función como el controlador de eventos, en lugar de una cadena.
+2. Tienes que tener cuidado con el significado de las this devoluciones de llamadas JSX. En JavaScript, los métodos de clase no están vinculados por defecto. Si olvida atar this.handleClicky pasarlo a onClick, thiss erá undefined cuando realmente se llama a la función.
+3. Dentro de un ciclo, es común querer pasar un parámetro adicional a un controlador de eventos. Por ejemplo, si ides la Id. De fila, cualquiera de las siguientes opciones funcionaría:
+        -<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+        -<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+4.Conceptualmente, los componentes son como las funciones de JavaScript. Aceptan entradas arbitrarias (called "props") y devuelven elementos React que describen lo que debería aparecer en la pantalla.
+5. Siempre debemos comienzar los nombres de los componentes con una letra mayúscula. React trata los componentes comenzando con letras minúsculas como etiquetas DOM. Por ejemplo, <div />representa una etiqueta div HTML, pero <Welcome />representa un componente.
+6. Los componentes pueden referirse a otros componentes en su salida. Esto nos permite usar la misma abstracción de componentes para cualquier nivel de detalle. Un botón, un formulario, un diálogo, una pantalla: en las aplicaciones Reaccionar, todos esos se expresan comúnmente como componentes.
