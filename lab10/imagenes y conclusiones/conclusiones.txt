@@ -1,3 +1,26 @@
 Lab10
 Autor: Granda Ramos Juan Carlos
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Desarrollo de laboratorio:
+________________________________________________________________________________________________________________
+3.7) Captura del codigo, aqui puse el de todo el proyecto.
+        IMG: cap-3.8.PNG
+________________________________________________________________________________________________________________
+3.8) Captura del funcionamiento completo del laboratorio.
+        Imagen de la pagina de "Inicio":
+                IMG: cap-4.7.PNG
+        Imagen de la pagina de "Posts":
+                IMG: cap-4.7.1.PNG
+        Imagen de la pagina de "Nuevo Post":
+                IMG: cap-4.7.2.PNG
+________________________________________________________________________________________________________________
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Tarea: La tarea fue desarrollada en el proyecto, para su visualizacion dirijase a nuestro repositorio en la caperta de templates, template1.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Conclusiones:
+1. En este laboratorio vimos el ciclo de vida, cúales son los métodos disponibles en React js y cómo actuar en cada uno de los puntos de construcción, actualización y destrucción de un componentes, ademas vimos la libreria de router que nos ayuda a movernos entre diferentes navlinks
+2. Los metodos que se ejecutan al iniciar un componente ocurren en este orden primero se dispara el método componentWillMount, despues se renderiza y se monta el componente en el DOM, y por ultimo se dispara el método componentDidMount.
+3. Los metodos que se ejecutan al actualizar un componente: primero se dispara el método shouldComponentUpdate, luego se dispara el método componentWillReceiveProps si recibe nuevas props, seguidament se dispara el método componentWillUpdate antes de volver a renderizar. Despues se actualiza el componente y se renderiza en el DOM y por ultimo se dispara el método componentDidUpdate una vez este el componente renderizado.
+4. Para la destrucción de un componente primero se dispara el método componentWillUnmount antes de que se destruya el componente, el componente es destruido y eliminado del DOM
+5. Fetch que a través de Promesas nos simplifica y facilita el realizar una petición AJAX de forma nativa, de esta manera podemos jalar data de nuestro api rest que realizamos con express, el control de la informacion la controlamos mediante el ciclo de vida de los componentes.
+6. En conclusion, este laboratorio fue muy importante ya que apredimos como funciona el ciclo de vida de los componente, como rutear nuestra aplciación y sobre todo como jalar data desde un api, manejandola atraves de los emtodos propios de ract.
