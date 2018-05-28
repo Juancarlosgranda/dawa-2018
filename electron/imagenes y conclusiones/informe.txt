@@ -1,0 +1,10 @@
+Lab electrón:
+Autor: Granda Ramos Juan Carlos
+___________________________________________________________________________
+1) Capturas del laboratorio de electron:
+        Hola Mundo!!-> 1.PNG
+        Imprimiendo el packge.json -> 2.PNG
+        Abriendo ventana modal -> 3.PNG
+        Probando el menu -> 4.PNG
+        Probando el instalador -> 5.PNG
+___________________________________________________________________________
