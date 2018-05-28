@@ -7,4 +7,5 @@ ___________________________________________________________________________
         Abriendo ventana modal -> 3.PNG
         Probando el menu -> 4.PNG
         Probando el instalador -> 5.PNG
+        Aplicacion en el escritorio -> 6.PNG
 ___________________________________________________________________________
