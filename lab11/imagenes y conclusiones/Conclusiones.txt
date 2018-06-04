@@ -1,0 +1,15 @@
+Laboratorio 11
+Autor: Granda Ramos Juan Carlos
+_________________________________________________________________________________________________________________
+Capturas:
+ Pagina de inicio: inicio.PNG
+ Formulario del blog: formBlog.PNG
+ Ver los blogs y detalladamente uno: blogsAndBlog.PNG
+ Ver el spinner implementado: Spinner.png
+_________________________________________________________________________________________________________________
+Conclusiones-----------------------------------------------------------------------------------------------------
+1. Casi todos los proyectos deben interactuar con una API REST en algún momento. Axios es un cliente HTTP liviano basado en el servicio $ http dentro de Angular.js v1.x y similar a la API de obtención .
+2. Axios está basado en promesas y, por lo tanto, podemos aprovechar la sincronización y esperar un código asíncrono más legible. 
+3. También podemos interceptar y cancelar solicitudes, y existe una protección integrada para el cliente contra la falsificación de solicitudes entre sitios. Pero la mejor parte de Axios esque podemos manejar facilmente la API
+4. Utilizando axios.get(url), obtenemos una promesa que devuelve un objeto de respuesta. También podemos manejar otros verbos como POST y PUT de manera similar.
+5. Axios nos permite definir una instancia base en la que podemos definir una URL y cualquier otro elemento de configuración, en nuestro caso creamos el archivo de axios-blog.js.
