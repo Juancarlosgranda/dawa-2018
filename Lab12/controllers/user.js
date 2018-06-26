@@ -10,7 +10,7 @@ const exposedFields = [
 
 module.exports = {
     
-    signuo: (req,res,next)=>{
+    signup: (req,res,next)=>{
         var user = new User({
             ...req.body
         });
@@ -43,7 +43,7 @@ module.exports = {
         User
         .findOne({username: req.body.username})
         .select(exposedFields.join(' ')+' password')
-        .exec(err, user) => {
+        .exec((err, user) => {
             if(err) res.status(500).json(err);
             if(!user){
                 return res.status(401).json({
@@ -69,7 +69,7 @@ module.exports = {
             .catch(err => {
                 res.status(500).json(err);
             });
-        };
+        });
     },
     
     refreshToken: (req,res,next)=>{
@@ -126,7 +126,7 @@ module.exports = {
         });
         user
         .save()
-        .then(result = {
+        .then(result => {
             res.status(200).json({
             message: 'User succesfully created!',
             data: {
@@ -188,7 +188,7 @@ module.exports = {
                 update: (req,res,next) => {
                     const id = req.params.id;
                     let updateParams = {
-                        ..req.body
+                        ...req.body
                     };
                     
                     User.update({_id: id},{$set: updateParams})
@@ -206,7 +206,7 @@ module.exports = {
                         });
                     });
                 },
-                    
+                     
                     delete: (req,res,next)=>{
                         const id = req.params.id;
                         User.remove({_id: id})

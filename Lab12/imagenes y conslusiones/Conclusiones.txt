@@ -1,0 +1,13 @@
+LAB 12
+Imagenes correspondientes a los puntos desarrollados:
+a) 2.1.JPG
+b) 2.2.JPG
+c) 2.4.JPG
+d) 3.5.JPG
+e) bcript.JPG
+f) nabvar.JPG
+_____________________________________________________________________________________________________
+CONCLUSIONES:
+1) EL FIN DE ESTE LABORATORIO ERA ORIENTARNOS EN EL DESARROLLO DE NUESTRO PROYECTO, YA QUE TOCAMOS TEMAS IMPORTANTE COMO EL LOGIN QUE ES MUY IMPORTANTE EN EL PROYECTO.
+2) VIMOS COMO USAR EL API DESARROLLADO EN NUESTRO PROYECTO.
+3) LANZAMOS EL PROYECTO REACT JUNTO CON EL API.
